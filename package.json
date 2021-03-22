@@ -1,0 +1,22 @@
+{
+  "name": "fullstack-workspaces",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "esbuild": "^0.9.6",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  },
+  "scripts": {
+    "app": "yarn workspace @my-app/app",
+    "common": "yarn workspace @my-app/common",
+    "server": "yarn workspace @my-app/server",
+    "build": "ts-node ./scripts/build.ts",
+    "serve": "node ./packages/server/dist/index.js",
+    "docker": "docker build . -t fullstack-workspace"
+  }
+}
